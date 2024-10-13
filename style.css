@@ -1,0 +1,51 @@
+body{
+    margin: 0; /* Xóa margin mặc định */  
+    padding: 0; /* Xóa padding mặc định */  
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-image: url('https://wallpapersmug.com/download/1024x768/efb915/clouds-sky-anime.jpg');
+    /* background-image: url('https://img5.thuthuatphanmem.vn/uploads/2021/12/28/night-sky-anime-wallpaper_091116689.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: slider 10s linear ;
+   
+
+    
+    
+}
+@keyframes slider{
+    0%{background-image: url('https://anhdepfree.com/wp-content/uploads/2020/05/anh-nen-anime-galaxy-dep.jpg');}
+    30%{background-image: url('https://nhadepso.com/wp-content/uploads/2023/01/tai-ngay-99-anh-bau-troi-dem-day-sao-dep-lung-linh-huyen-ao_26.jpg');}
+    60%{background-image: url('https://symbols.vn/wp-content/uploads/2021/12/Anh-nen-Anime-Galaxy-lap-lanh.jpg');}
+    100%{background-image: url('https://haycafe.vn/wp-content/uploads/2022/03/Anh-bau-troi-dem-day-sao-bang-roi.jpg');}
+}
+.demo{
+    font-size: 30px ;
+    height: 170px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 
+        0 0 5px #ff0080, /* Ánh sáng màu hồng */
+        0 0 10px #00ff80, 
+        0 0 15px #00c3ff; /* Có thể điều chỉnh để tăng độ sáng */
+}
+.letter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.cursor {
+    display: inline-block; /* Để con trỏ có thể nhấp nháy */
+    opacity: 0;
+    animation: blink 1s step-end infinite; /* Tạo hiệu ứng nhấp nháy */
+}
+@keyframes blink {
+    50% {
+        opacity: 1; /* Ẩn con trỏ giữa chu kỳ nhấp nháy */
+    }
+}
+
+
