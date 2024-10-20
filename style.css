@@ -1,50 +1,104 @@
 body{
-    margin: 0; /* Xóa margin mặc định */  
-    padding: 0; /* Xóa padding mặc định */  
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-image: url('https://wallpapersmug.com/download/1024x768/efb915/clouds-sky-anime.jpg');
-    /* background-image: url('https://img5.thuthuatphanmem.vn/uploads/2021/12/28/night-sky-anime-wallpaper_091116689.jpg'); */
+    background-image: url('https://tienthanh.edu.vn/hinh-nen-trai-tim-mau-hong/imager_52_19308_700.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    animation: slider 10s linear ;
+    height: 100vh
    
-
+}
+.demo1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
+    font-size: 30px;
+    color: rgb(245, 10, 10);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.733), /* Ánh sáng trắng */
+                 0 0 10px rgb(255, 105, 180), /* Ánh sáng hồng */
+                 0 0 15px rgba(255, 20, 147, 1); /* Ánh sáng đậm */
+    position: relative; /* Để có thể sử dụng top trong animation */
+    animation: fall 3s ease forwards; /* Áp dụng animation */
     
 }
-@keyframes slider{
-    0%{background-image: url('https://anhdepfree.com/wp-content/uploads/2020/05/anh-nen-anime-galaxy-dep.jpg');}
-    30%{background-image: url('https://nhadepso.com/wp-content/uploads/2023/01/tai-ngay-99-anh-bau-troi-dem-day-sao-dep-lung-linh-huyen-ao_26.jpg');}
-    60%{background-image: url('https://symbols.vn/wp-content/uploads/2021/12/Anh-nen-Anime-Galaxy-lap-lanh.jpg');}
-    100%{background-image: url('https://haycafe.vn/wp-content/uploads/2022/03/Anh-bau-troi-dem-day-sao-bang-roi.jpg');}
-}
-.demo{
-    font-size: 30px ;
-    height: 170px;
-    font-weight: 500;
-    color: #fff;
-    text-shadow: 
-        0 0 5px #ff0080, /* Ánh sáng màu hồng */
-        0 0 10px #00ff80, 
-        0 0 15px #00c3ff; /* Có thể điều chỉnh để tăng độ sáng */
-}
-.letter {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.cursor {
-    display: inline-block; /* Để con trỏ có thể nhấp nháy */
-    opacity: 0;
-    animation: blink 1s step-end infinite; /* Tạo hiệu ứng nhấp nháy */
-}
-@keyframes blink {
+@keyframes fall {
+    0% {
+        transform: translateY(-100px); /* Bắt đầu từ trên cao */
+        opacity: 0; /* Bắt đầu với độ trong suốt bằng 0 */
+    }
     50% {
-        opacity: 1; /* Ẩn con trỏ giữa chu kỳ nhấp nháy */
+        opacity: 1; /* Độ trong suốt đạt 1 giữa chừng */
+    }
+    100% {
+        transform: translateY(200px); /* Dừng lại ở vị trí ban đầu */
+    }
+}
+.heart {
+  
+    
+    position: relative;
+    width: 100px; /* Độ rộng trái tim */
+    height: 100px; /* Chiều cao trái tim */
+    background-color: red; /* Màu sắc của trái tim */
+    transform: rotate(-45deg); /* Xoay để tạo hình trái tim */
+    margin: 50px;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 100px; /* Độ rộng của hai hình tròn */
+    height: 100px; /* Chiều cao của hai hình tròn */
+    background-color: red; /* Màu sắc của hai hình tròn */
+    border-radius: 50%; /* Làm cho chúng thành hình tròn */
+}
+
+.heart:before {
+    top: -50px; /* Đặt hình tròn bên trái lên trên */
+    left: 0;
+}
+
+.heart:after {
+    left: 50px; /* Đặt hình tròn bên phải sang bên phải */
+    top: 0;
+}
+.heart{
+    position: absolute;
+    top: 40%;
+    left: 850px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(0%, 0%) scale(1); /* Kích thước bình thường */
+    }
+    50% {
+        transform: translate(0%, 0%) scale(1.2); /* Tăng kích thước một chút */
+    }
+}
+a{
+    color:#ff04c0;
+    font-size: 25px;
+    padding: 10px;
+    background-color: rgba(255, 182, 193, 0.5);
+    margin: 0 auto; /* Căn giữa phần tử */
+    border-radius: 15px; /* Bo góc với bán kính 15px */
+    text-decoration: none;
+    position: absolute;
+    top: 60%;
+    left: 900px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.733), /* Ánh sáng trắng */
+                 0 0 10px rgb(160, 7, 134), /* Ánh sáng hồng */
+                 0 0 15px rgba(255, 20, 147, 1); /* Ánh sáng đậm */
+    position: relative; /* Để có thể sử dụng top trong animation */
+    opacity: 0; /* Bắt đầu với độ trong suốt bằng 0 */
+    animation: fadeIn 6s forwards; /* Áp dụng hiệu ứng fadeIn */
+}
+a:hover{
+    background-color: rgba(163, 3, 96, 0.5);
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Kết thúc với độ trong suốt bằng 1 */
     }
 }
 
